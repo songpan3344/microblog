@@ -48,8 +48,8 @@ router.post = function(req, res) {
 	});
 };
 router.reg = function(req, res) {
-	res.locals.title = '用户注册'
-	res.render('reg')
+	res.locals.title = '用户注册';
+	res.render('reg');
 };
 router.doReg = function(req, res) {
 	debugger;
@@ -87,8 +87,8 @@ router.doReg = function(req, res) {
 	});
 };
 router.login = function(req, res) {
-	res.locals.title = '用户登入'
-	res.render('login');
+	res.locals.title = '用户登入';
+	res.render('/login');
 };
 router.doLogin = function(req, res) {
 	//生成口令的散列值

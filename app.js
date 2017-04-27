@@ -33,7 +33,10 @@ app.use(session({
 	store: new MongoStore({
 		url: 'mongodb://localhost/' + settings.db,
 		autoRemove: 'native'
-	})
+	}),
+	cookie:{
+		maxAge:600000,	
+	}
 }));
 app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));

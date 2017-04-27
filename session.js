@@ -11,16 +11,17 @@ const CONFIG = {
   httpOnly: true, /** (boolean) httpOnly or not (default true) */
   signed: true, /** (boolean) signed or not (default true) */
 };
+
 app.use(session(CONFIG, app));
 // or if you prefer all default config, just use => app.use(session(app));
 
-app.use(ctx => {
+app.use(function* (next){
   // ignore favicon
-  if (ctx.path === '/favicon.ico') return;
+  if (this.path === '/favicon.ico') return;
 
-  let n = ctx.session.views || 0;
-  ctx.session.views = ++n;
-  ctx.body = n + ' views';
+  let n = this.session.views || 0;
+  this.session.views = ++n;
+  this.body = n + ' views';
 });
 
 app.listen(3000);
