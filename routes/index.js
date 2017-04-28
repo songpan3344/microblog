@@ -88,7 +88,7 @@ router.doReg = function(req, res) {
 };
 router.login = function(req, res) {
 	res.locals.title = '用户登入';
-	res.render('/login');
+	res.render('login');
 };
 router.doLogin = function(req, res) {
 	//生成口令的散列值
